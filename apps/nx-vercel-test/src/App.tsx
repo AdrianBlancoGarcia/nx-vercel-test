@@ -16,6 +16,8 @@ function App() {
 
         <p>{process.env.NX_DESCRIPTION}</p>
 
+        <button onClick={methodDoesNotExist}>Break the world</button>;
+
         <img src={logo} className="App-logo" alt="logo" />
       </header>
     </div>
