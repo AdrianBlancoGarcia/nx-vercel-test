@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+import * as Sentry from "@sentry/react";
+
 import logo from './logo.svg';
 
 import './App.css';
@@ -31,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+export default Sentry.withProfiler(App);
