@@ -15,7 +15,7 @@ Sentry.init({
   dsn: "https://2990a5cb084440a0836dbe2da3c21a22@o1267595.ingest.sentry.io/6454133",
   integrations: [new BrowserTracing()],
   debug: true,
-  release: "nx-vercel-test@" + RELEASE,
+  release: "nx-vercel-test@1.0.0",
   tracesSampleRate: 1.0,
 });
 

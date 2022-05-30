@@ -27,9 +27,9 @@ jobs:
           # Marcamos como entorno a producción.
           environment: production
           # Necesitamos decirle a Sentry donde encontrar los sourcemaps.
-          sourcemaps: dist/apps/campus
+          sourcemaps: dist/apps/nx-vercel-test
           # Los ficheros minimizados se despliegan en la raíz del
           # proyecto, así que con esto le decimos donde encontrarlos.
           # url_prefix: ~/scripts/
           # Usamos la versión del package.json del proyecto para nombrar la release.
-          version: clevery@${{ steps.package-version.outputs.current-version }} # Now is setting 'clevery@1.0.1'
+          version: nx-vercel-test@${{ steps.package-version.outputs.current-version }} # Now is setting 'clevery@1.0.1'
