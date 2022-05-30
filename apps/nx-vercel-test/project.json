@@ -12,7 +12,7 @@
         "outputPath": "dist/apps/nx-vercel-test",
         "index": "apps/nx-vercel-test/src/public/index.html",
         "baseHref": "/",
-        "sourceMap": true,
+        "sourceMap": false,
         "main": "apps/nx-vercel-test/src/index.tsx",
         "polyfills": "apps/nx-vercel-test/src/polyfills.ts",
         "tsConfig": "apps/nx-vercel-test/tsconfig.app.json",
