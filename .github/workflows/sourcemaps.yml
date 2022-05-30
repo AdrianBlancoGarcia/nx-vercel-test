@@ -1,0 +1,35 @@
+name: Generate sourcemaps
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  gen-sourcemaps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔎  Checkout to master
+        uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: 💾  Install nx
+        run: npm ci
+      - name: 📤  Generate production build
+        run: npm run build:dev
+      - name: 📦  Create Sentry release
+        uses: getsentry/action-release@v1
+        env:
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+        with:
+          # Marcamos como entorno a producción.
+          environment: production
+          # Necesitamos decirle a Sentry donde encontrar los sourcemaps.
+          sourcemaps: dist/apps/campus
+          # Los ficheros minimizados se despliegan en la raíz del
+          # proyecto, así que con esto le decimos donde encontrarlos.
+          # url_prefix: ~/scripts/
+          # Usamos la versión del package.json del proyecto para nombrar la release.
+          version: clevery@${{ steps.package-version.outputs.current-version }} # Now is setting 'clevery@1.0.1'
