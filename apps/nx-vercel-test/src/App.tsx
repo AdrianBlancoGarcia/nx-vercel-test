@@ -16,6 +16,15 @@ function App() {
 
         <p>{process.env.NX_DESCRIPTION}</p>
 
+        <button
+          style={{backgroundColor: 'red', color: 'white'}}
+          onClick={() => {
+            throw Error('ERROR CONTROLADO - DEBUG');
+          }}
+        >
+          Generar alerta Sentry
+        </button>
+
         <img src={logo} className="App-logo" alt="logo" />
       </header>
     </div>
