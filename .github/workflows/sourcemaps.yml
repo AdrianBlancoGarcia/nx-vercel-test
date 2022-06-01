@@ -18,7 +18,7 @@ jobs:
       - name: 📤  Generate production build
         run: npm run build:dev
       - name: 📦  Create Sentry release
-        uses: getsentry/action-release@v1
+        uses: sentry-cli releases new -p next-vercel-test 1.1.2
         env:
           SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
           SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
