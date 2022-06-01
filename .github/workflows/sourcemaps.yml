@@ -32,4 +32,4 @@ jobs:
           # proyecto, así que con esto le decimos donde encontrarlos.
           # url_prefix: ~/scripts/
           # Usamos la versión del package.json del proyecto para nombrar la release.
-          version: nx-vercel-test@1.1.2
+          version: nx-vercel-test@{{ steps.package-version.outputs.current-version }}
