@@ -16,9 +16,9 @@ jobs:
       - name: 💾  Install nx
         run: npm ci
       - name: 📤  Generate production build
-        run: npm run build:dev
+        run: npm run build
       - name: 📦  Create Sentry release
-        uses: sentry-cli releases new -p next-vercel-test 1.1.2
+        uses: getsentry/action-release@1.1.2
         env:
           SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
           SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
@@ -32,4 +32,4 @@ jobs:
           # proyecto, así que con esto le decimos donde encontrarlos.
           # url_prefix: ~/scripts/
           # Usamos la versión del package.json del proyecto para nombrar la release.
-          version: nx-vercel-test@1.1.2 
+          version: nx-vercel-test@1.1.2
