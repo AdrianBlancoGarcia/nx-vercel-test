@@ -16,7 +16,7 @@ jobs:
       - name: 💾  Install nx
         run: npm ci
       - name: 📤  Generate production build
-        run: npm run build
+        run: npm run build:dev
       - name: 📦  Create Sentry release
         uses: getsentry/action-release@v1
         env:
