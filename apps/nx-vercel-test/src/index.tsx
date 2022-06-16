@@ -12,7 +12,7 @@ import './index.css';
 const RELEASE = process.env.npm_package_version
 
 Sentry.init({
-  dsn: "https://2990a5cb084440a0836dbe2da3c21a22@o1267595.ingest.sentry.io/6454133",
+  dsn: "http://6e7c680d648941ac9df6d6e7e92e6dc9@2ac4-139-47-24-207.ngrok.io",
   integrations: [new BrowserTracing()],
   debug: true,
   release: "nx-vercel-test@1.1.2",
